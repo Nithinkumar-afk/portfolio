@@ -28,6 +28,16 @@ body {
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
+  user-select: none; /* Disable text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Disable dragging images */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none; /* Prevent right-click and saving */
 }
 
 /* ====== HEADER ====== */
@@ -283,43 +293,35 @@ footer {
 @media (max-width: 1024px) {
   header { padding: 12px 30px; }
 }
-
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     gap: 10px;
     padding: 12px 20px;
   }
-
   .hero-content {
     flex-direction: column;
     text-align: center;
     gap: 25px;
   }
-
   .hero-text {
     text-align: center;
   }
-
   .hero-content img {
     width: 220px;
     height: 220px;
   }
-
   h1, h2, h3 {
     line-height: 1.3;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   }
-
   p {
     font-size: 1rem;
     line-height: 1.7;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   }
-
   section { padding: 90px 8%; }
 }
-
 @media (max-width: 480px) {
   .logo-text { font-size: 20px; }
   nav a { font-size: 0.9em; }
@@ -329,7 +331,8 @@ footer {
 </style>
 </head>
 
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
 <header>
   <div class="logo-container">
     <span class="logo-text">NILA</span>
@@ -405,7 +408,20 @@ footer {
   </div>
 </section>
 
-<footer>© 2025 Nithin Kumar | Developed by Nithin Kumar</footer>
+<footer>© 2025 Developed by Nithin Kumar</footer> 
+
+<!-- ====== SECURITY SCRIPT ====== -->
+<script>
+// Disable right-click, F12, and inspect shortcuts
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12' || 
+      (e.ctrlKey && e.shiftKey && ['I','C','J'].includes(e.key)) || 
+      (e.ctrlKey && e.key === 'U')) {
+    e.preventDefault();
+  }
+});
+</script>
+
 </body>
 </html>
-
