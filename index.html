@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nithin Kumar | Portfolio</title>
 
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +24,8 @@ body{
 /* HEADER */
 header{
   position:fixed;
-  top:0; left:0;
+  top:0;
+  left:0;
   width:100%;
   padding:20px 50px;
   display:flex;
@@ -31,25 +33,32 @@ header{
   align-items:center;
   z-index:1000;
 }
-header a{
+header .logo{
+  font-size:26px;
+  font-weight:700;
+}
+nav a{
   color:#fff;
   text-decoration:none;
   margin-left:30px;
   font-weight:600;
 }
-header a:hover{color:#d6c4ff;}
+nav a:hover{color:#d6c4ff;}
 
-/* HOME SECTION */
-#home{
+/* GLOBAL SECTION STYLE */
+section{
   min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
   padding:120px 0;
-  background:linear-gradient(135deg,#130c3e,#5737ff);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 }
 
-/* Main Rounded Card */
+/* HOME */
+#home{
+  background:linear-gradient(135deg,#130c3e,#5737ff);
+}
 .home-container{
   width:85%;
   max-width:1250px;
@@ -63,8 +72,6 @@ header a:hover{color:#d6c4ff;}
   overflow:hidden;
   box-shadow:0 0 40px rgba(0,0,0,0.3);
 }
-
-/* Circular right background shape */
 .circle-bg{
   position:absolute;
   right:-180px;
@@ -76,8 +83,6 @@ header a:hover{color:#d6c4ff;}
   background:#5737ff;
   opacity:0.9;
 }
-
-/* White ring circle */
 .white-ring{
   position:absolute;
   right:-110px;
@@ -89,11 +94,10 @@ header a:hover{color:#d6c4ff;}
   border:3px solid #fff;
   opacity:0.8;
 }
-
-/* CONTENT */
 .home-left{
   width:55%;
   z-index:10;
+  text-align:left;
 }
 .home-left h1{
   font-size:3.4rem;
@@ -103,44 +107,16 @@ header a:hover{color:#d6c4ff;}
 .home-left h1 span{
   color:#d6c4ff;
 }
-.home-left h3{
-  margin-top:10px;
-  font-size:1.4rem;
-  font-weight:600;
-}
-.home-left h3 span{
-  background:#5737ff;
-  padding:4px 10px;
-  border-radius:5px;
-}
 .home-left p{
   margin-top:25px;
-  line-height:1.7;
+  line-height:1.6;
   color:#dcd9ff;
 }
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 30px;
-  background:#5737ff;
-  color:#fff;
-  font-weight:700;
-  text-decoration:none;
-  border-radius:10px;
-  transition:0.3s;
-}
-.btn:hover{
-  background:#6c4bff;
-}
-
-/* PROFILE IMAGE */
 .home-right{
   width:45%;
   display:flex;
   justify-content:center;
-  position:relative;
-  z-index:11;
+  z-index:10;
 }
 .home-right img{
   width:260px;
@@ -149,10 +125,93 @@ header a:hover{color:#d6c4ff;}
   object-fit:cover;
   border:5px solid #fff;
   box-shadow:0 0 25px rgba(0,0,0,0.4);
-  transition:0.3s ease;
 }
-.home-right img:hover{
-  transform:scale(1.05);
+
+/* SECTION TITLES */
+section h2{
+  font-size:2.5rem;
+  font-weight:700;
+  margin-bottom:25px;
+  color:#e5dbff;
+}
+
+/* PROJECTS */
+.project-grid{
+  width:85%;
+  max-width:1100px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.project{
+  background:#1b144a;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+.project:hover{
+  transform:translateY(-5px);
+}
+.project img{
+  width:100%;
+  border-radius:15px;
+}
+.project h3{
+  margin-top:12px;
+  font-size:1.2rem;
+  color:#d6c4ff;
+}
+.project p{
+  margin-top:6px;
+  color:#cfc9f6;
+}
+.project a{
+  display:inline-block;
+  margin-top:10px;
+  color:#a697ff;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* ABOUT */
+#about p{
+  width:85%;
+  max-width:900px;
+  background:#1b144a;
+  padding:25px;
+  border-radius:20px;
+  color:#dcd9ff;
+  line-height:1.7;
+  box-shadow:0 0 25px rgba(0,0,0,0.25);
+  text-align:center;
+}
+
+/* CONTACT */
+.social-icons{
+  margin-top:25px;
+  display:flex;
+  gap:25px;
+}
+.social-icons a{
+  font-size:1.7rem;
+  color:#fff;
+  background:#5737ff;
+  padding:16px;
+  border-radius:50%;
+  text-decoration:none;
+  transition:0.3s;
+}
+.social-icons a:hover{
+  background:#6f54ff;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#dcd9ff;
+  margin-top:40px;
 }
 
 /* RESPONSIVE */
@@ -162,14 +221,13 @@ header a:hover{color:#d6c4ff;}
     padding:60px 40px;
     text-align:center;
   }
-  .home-left{
+  .home-left, .home-right{
     width:100%;
   }
   .home-right{
-    width:100%;
-    margin-top:40px;
+    margin-top:35px;
   }
-  .circle-bg,.white-ring{
+  .circle-bg, .white-ring{
     display:none;
   }
 }
@@ -179,7 +237,7 @@ header a:hover{color:#d6c4ff;}
 <body>
 
 <header>
-  <h2 style="color:#fff;font-weight:800;">NILA</h2>
+  <div class="logo">NILA</div>
   <nav>
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
@@ -188,32 +246,85 @@ header a:hover{color:#d6c4ff;}
   </nav>
 </header>
 
-<!-- HOME SECTION -->
+<!-- HOME -->
 <section id="home">
   <div class="home-container">
-
-    <!-- LEFT TEXT -->
+    
     <div class="home-left">
-      <h1>It's Me <span>Nithin<br>Kumar</span></h1>
-      <h3>Front End <span>Web Developer</span></h3>
+      <h1>NITHIN <span>KUMAR</span></h1>
       <p>
-        I craft clean, modern and efficient web experiences with smooth UI and 
-        thoughtful design.  
+        I specialize in crafting timeless, futuristic, and high-performance web experiences
+        tailored to unique goals.
       </p>
-      <a href="#" class="btn">Download CV</a>
     </div>
 
-    <!-- RIGHT IMAGE -->
     <div class="home-right">
       <img src="profile.png" alt="Nithin Kumar">
     </div>
 
-    <!-- Circles -->
     <div class="circle-bg"></div>
     <div class="white-ring"></div>
 
   </div>
 </section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-grid">
+
+    <div class="project">
+      <img src="kallikrates'25.png" alt="">
+      <h3>Event Website</h3>
+      <p>Modern symposium landing page with responsive design and smooth animations.</p>
+      <a href="https://kallikrates25.netlify.app/" target="_blank">View Project →</a>
+    </div>
+
+    <div class="project">
+      <img src="demo.png" alt="">
+      <h3>Event Portal</h3>
+      <p>Dynamic event management system with user-friendly features and automation.</p>
+      <a href="https://demoo2025.netlify.app/" target="_blank">View Project →</a>
+    </div>
+
+    <div class="project">
+      <img src="poster.png" alt="">
+      <h3>Portfolio Design</h3>
+      <p>Futuristic cyberpunk-style personal portfolio built with HTML, CSS & JS.</p>
+      <a href="https://nithinkumar-afk.github.io/portfolio/" target="_blank">View Project →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+
+  <p>
+    I’m a passionate web developer with a love for futuristic, high-impact, and responsive designs.
+    My focus is crafting experiences that combine creativity, clean design, and smooth interaction.  
+    <br><br>
+    I aim to help colleges, hackathons, and events create unique online presences that leave lasting impressions.  
+    <br><br>
+    If you’re looking for a creative and reliable web developer who transforms ideas into elegant digital experiences — I’d love to collaborate.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Get In Touch</h2>
+
+  <div class="social-icons">
+    <a href="mailto:nithinkumar9489@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/nithin-kumar-945768300" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://instagram.com/nithin_adm" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/9344764869" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</section>
+
+<footer>© 2025 Developed by Nithin Kumar</footer>
 
 </body>
 </html>
